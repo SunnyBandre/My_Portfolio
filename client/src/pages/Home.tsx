@@ -49,21 +49,22 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold tracking-tight mb-6"
+            className="text-6xl md:text-8xl lg:text-9xl font-display font-black tracking-tighter mb-6"
           >
-            <span className="text-foreground">Building </span>
-            <span className="text-gradient">Digital</span>
+            <span className="text-foreground">SUNNY</span>
             <br />
-            <span className="text-foreground">Experiences</span>
+            <span className="text-gradient">BANDRE</span>
           </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed"
+            className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-10 leading-relaxed font-medium"
           >
-            {personalInfo?.role || "Web Developer"} passionate about creating stunning, responsive, and user-centric applications using modern technologies.
+            {personalInfo?.role || "Web Developer"} & Software Engineer
+            <br />
+            <span className="text-foreground/60 text-lg">Creating high-performance digital solutions with modern technology stacks.</span>
           </motion.p>
 
           <motion.div 

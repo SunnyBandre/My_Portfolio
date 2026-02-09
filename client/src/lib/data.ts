@@ -1,0 +1,143 @@
+export const PORTFOLIO_DATA = {
+  personalInfo: {
+    name: "Sunny Bandre",
+    role: "Web Developer",
+    email: "bandresunny89@gmail.com",
+    phone: "8356906342",
+    location: "Mumbai, India",
+    socialLinks: {
+      linkedin: "https://linkedin.com/in/sunnybandre",
+      github: "https://github.com/sunnybandre"
+    },
+    bio: "Web Developer specialized in full-stack development using React, Node.js, and modern web technologies. Passionate about creating efficient, user-friendly applications."
+  },
+  experience: [
+    {
+      id: 1,
+      company: "Workved Space Pvt Ltd",
+      role: "Web Developer",
+      duration: "Oct 2024 - Present",
+      description: [
+        "Led project planning, delegated tasks, and ensured on-time milestone delivery.",
+        "Implemented new features and UI/UX improvements to enhance overall user experience."
+      ]
+    },
+    {
+      id: 2,
+      company: "Softtact Technology",
+      role: "Trainee Software Developer",
+      duration: "Jan 2024 - Oct 2024",
+      description: [
+        "Developed and maintained pCare, a C# desktop medical software with a MySQL backend.",
+        "Enhanced pCare web application using React, ASP.NET, and Web API.",
+        "Automated PNDT form submission using Selenium with Chromium.",
+        "Collaborated with cross-functional teams to debug, test, and optimize application modules."
+      ]
+    }
+  ],
+  projects: [
+    {
+      id: 1,
+      title: "Workved Interiors",
+      shortDescription: "BOQ generation platform",
+      fullDescription: "Created a BOQ generation platform from scratch using Vite, Tailwind CSS & Supabase. Integrated advanced libraries (Three.js, Swiper, Lottie, GSAP, Framer Motion, jsPDF, EmailJS) for interactivity and professional functionality.",
+      techStack: ["Vite", "Tailwind CSS", "Supabase", "Three.js", "GSAP", "Framer Motion"],
+      link: "https://workved.com",
+      githubLink: null,
+      imageUrl: "/images/workved.jpg",
+      category: "Web"
+    },
+    {
+      id: 2,
+      title: "Frameazy",
+      shortDescription: "E-commerce Frame Selling Platform",
+      fullDescription: "Built a frame-selling platform with Next.js & Tailwind CSS, deployed on GoDaddy & Vercel. Integrated PhonePe (payments), Cloudinary (image storage), and MongoDB (data management).",
+      techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudinary", "PhonePe"],
+      link: "https://frameazy.com",
+      githubLink: null,
+      imageUrl: "/images/frameazy.jpg",
+      category: "E-commerce"
+    },
+    {
+      id: 3,
+      title: "Fastone",
+      shortDescription: "Trading Website",
+      fullDescription: "Developed complete frontend using React & Tailwind CSS with smooth animations. Built responsive landing pages and login system; deployed on Vercel.",
+      techStack: ["React", "Tailwind CSS"],
+      link: "https://fastoneglobalmarkets.com",
+      githubLink: null,
+      imageUrl: "/images/fastone.jpg",
+      category: "Web"
+    },
+    {
+      id: 4,
+      title: "603 Coworking Space",
+      shortDescription: "Coworking Space Website",
+      fullDescription: "Enhanced UI, fixed bugs, and optimized performance using React (TypeScript) & Tailwind CSS. Maintained deployment on Vercel & GoDaddy.",
+      techStack: ["React", "TypeScript", "Tailwind CSS"],
+      link: "https://603thecoworkingspace.com",
+      githubLink: null,
+      imageUrl: "/images/coworking.jpg",
+      category: "Web"
+    },
+    {
+      id: 5,
+      title: "Shaishraddha",
+      shortDescription: "Android Restaurant Application",
+      fullDescription: "Shaishraddha is an Android application developed for restaurant management using Java.",
+      techStack: ["Java", "Android Studio"],
+      link: null,
+      githubLink: "https://github.com/sunnybandre/shaishraddha",
+      imageUrl: "/images/restaurant.jpg",
+      category: "Mobile"
+    },
+    {
+      id: 6,
+      title: "Attendance System",
+      shortDescription: "QR Code Attendance System",
+      fullDescription: "An automated attendance system using QR codes developed with Python.",
+      techStack: ["Python", "OpenCV"],
+      link: null,
+      githubLink: "https://github.com/sunnybandre/attendance-system",
+      imageUrl: "/images/attendance.jpg",
+      category: "System"
+    },
+    {
+      id: 7,
+      title: "Crypto-Bubbles",
+      shortDescription: "Cryptocurrency Visualization",
+      fullDescription: "A visual representation of cryptocurrency market data built with React.",
+      techStack: ["React", "D3.js"],
+      link: "https://crypto-bubble.vercel.app",
+      githubLink: "https://github.com/sunnybandre/crypto-bubbles",
+      imageUrl: "/images/crypto.jpg",
+      category: "Web"
+    }
+  ],
+  skills: [
+    {
+      id: 1,
+      category: "Programming Languages",
+      items: ["Java", "C", "C++", "Python", "C#", "JavaScript", "HTML", "CSS", "XML", "TypeScript"]
+    },
+    {
+      id: 2,
+      category: "Frameworks & Libraries",
+      items: ["React", "Vite", "Tailwind", "Bootstrap", "Angular", "Node.js", "Express.js", "Next JS", "Selenium", "Three.js", "GSAP"]
+    },
+    {
+      id: 3,
+      category: "Databases & Tools",
+      items: ["SQL", "MySQL", "PL/SQL", "MongoDB", "NoSQL", "Git", "GitHub", "VS Code", "Visual Studio", "Android Studio", "AWS", "Supabase", "Cloudinary"]
+    }
+  ],
+  education: [
+    {
+      id: 1,
+      degree: "Bachelor of Science (Computer Science)",
+      institution: "DG Ruparel College of Arts, Science & Commerce",
+      year: "May 2023",
+      grade: "CGPA: 9.14/10"
+    }
+  ]
+};
