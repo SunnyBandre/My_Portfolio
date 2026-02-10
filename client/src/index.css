@@ -1,43 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-display: 'Outfit', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: "Outfit", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
   /* Light Theme - Clean, Modern, Crisp */
   --background: 0 0% 98%;
   --foreground: 220 15% 10%;
-  
+
   --card: 0 0% 100%;
   --card-foreground: 220 15% 10%;
-  
+
   --popover: 0 0% 100%;
   --popover-foreground: 220 15% 10%;
-  
+
   --primary: 226 70% 55%; /* Vibrant Royal Blue */
   --primary-foreground: 0 0% 100%;
-  
+
   --secondary: 220 20% 94%;
   --secondary-foreground: 220 15% 10%;
-  
+
   --muted: 220 20% 92%;
   --muted-foreground: 220 10% 45%;
-  
+
   --accent: 262 60% 55%; /* Deep Purple Accent */
   --accent-foreground: 0 0% 100%;
-  
+
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
-  
+
   --border: 220 15% 90%;
   --input: 220 15% 90%;
   --ring: 226 70% 55%;
-  
+
   --radius: 0.75rem;
 }
 
@@ -45,28 +45,28 @@
   /* Dark Theme - Deep, Tech-focused, Neon accents */
   --background: 224 25% 6%; /* Almost black with slight blue tint */
   --foreground: 210 20% 98%;
-  
+
   --card: 224 20% 10%;
   --card-foreground: 210 20% 98%;
-  
+
   --popover: 224 20% 10%;
   --popover-foreground: 210 20% 98%;
-  
+
   --primary: 217 91% 60%; /* Electric Blue */
   --primary-foreground: 224 25% 6%;
-  
+
   --secondary: 224 15% 18%;
   --secondary-foreground: 210 20% 98%;
-  
+
   --muted: 224 15% 18%;
   --muted-foreground: 215 15% 65%;
-  
+
   --accent: 263 70% 65%; /* Neon Purple */
   --accent-foreground: 210 20% 98%;
-  
+
   --destructive: 0 62% 30%;
   --destructive-foreground: 0 0% 98%;
-  
+
   --border: 224 15% 18%;
   --input: 224 15% 18%;
   --ring: 217 91% 60%;
@@ -79,10 +79,16 @@
   body {
     @apply bg-background text-foreground font-body antialiased selection:bg-primary/20 selection:text-primary transition-colors duration-300;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display tracking-tight text-foreground;
   }
-  code, pre {
+  code,
+  pre {
     @apply font-mono;
   }
 }
@@ -91,11 +97,11 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-accent;
   }
-  
+
   .glass {
     @apply bg-background/80 backdrop-blur-md border-b border-border/50;
   }
-  
+
   .glass-card {
     @apply bg-card/50 backdrop-blur-sm border border-border/50 hover:bg-card/80 transition-all duration-300;
   }

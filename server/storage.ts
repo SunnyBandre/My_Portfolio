@@ -1,14 +1,16 @@
-
 import { db } from "./db";
 import {
-  projects, experience, skills, education, personalInfo,
-  type Project, type InsertProject,
-  type Experience, type InsertExperience,
-  type Skill, type InsertSkill,
-  type Education, type InsertEducation,
-  type PersonalInfo, type InsertPersonalInfo
+  type Project,
+  type InsertProject,
+  type Experience,
+  type InsertExperience,
+  type Skill,
+  type InsertSkill,
+  type Education,
+  type InsertEducation,
+  type PersonalInfo,
+  type InsertPersonalInfo,
 } from "@shared/schema";
-import { eq } from "drizzle-orm";
 
 export interface IStorage {
   // Projects
@@ -34,54 +36,89 @@ export interface IStorage {
 }
 
 export class DatabaseStorage implements IStorage {
+  // ================= PROJECTS =================
   async getProjects(): Promise<Project[]> {
-    return await db.select().from(projects);
+    return db.get("projects");
   }
 
   async getProject(id: number): Promise<Project | undefined> {
-    const [project] = await db.select().from(projects).where(eq(projects.id, id));
-    return project;
+    return db.get("projects").find((p) => p.id === id);
   }
 
   async createProject(insertProject: InsertProject): Promise<Project> {
-    const [project] = await db.insert(projects).values(insertProject).returning();
+    const project: Project = {
+      id: Date.now(), // simple auto-id
+      ...insertProject,
+    };
+
+    db.insert("projects", project);
     return project;
   }
 
+  // ================= EXPERIENCE =================
   async getExperience(): Promise<Experience[]> {
-    return await db.select().from(experience);
+    return db.get("experience");
   }
 
-  async createExperience(insertExperience: InsertExperience): Promise<Experience> {
-    const [exp] = await db.insert(experience).values(insertExperience).returning();
+  async createExperience(
+    insertExperience: InsertExperience,
+  ): Promise<Experience> {
+    const exp: Experience = {
+      id: Date.now(),
+      ...insertExperience,
+    };
+
+    db.insert("experience", exp);
     return exp;
   }
 
+  // ================= SKILLS =================
   async getSkills(): Promise<Skill[]> {
-    return await db.select().from(skills);
+    return db.get("skills");
   }
 
   async createSkill(insertSkill: InsertSkill): Promise<Skill> {
-    const [skill] = await db.insert(skills).values(insertSkill).returning();
+    const skill: Skill = {
+      id: Date.now(),
+      ...insertSkill,
+    };
+
+    db.insert("skills", skill);
     return skill;
   }
 
+  // ================= EDUCATION =================
   async getEducation(): Promise<Education[]> {
-    return await db.select().from(education);
+    return db.get("education");
   }
 
   async createEducation(insertEducation: InsertEducation): Promise<Education> {
-    const [edu] = await db.insert(education).values(insertEducation).returning();
+    const edu: Education = {
+      id: Date.now(),
+      ...insertEducation,
+    };
+
+    db.insert("education", edu);
     return edu;
   }
 
+  // ================= PERSONAL INFO =================
   async getPersonalInfo(): Promise<PersonalInfo | undefined> {
-    const [info] = await db.select().from(personalInfo).limit(1);
-    return info;
+    return db.get("personalInfo")[0];
   }
 
-  async createPersonalInfo(insertInfo: InsertPersonalInfo): Promise<PersonalInfo> {
-    const [info] = await db.insert(personalInfo).values(insertInfo).returning();
+  async createPersonalInfo(
+    insertInfo: InsertPersonalInfo,
+  ): Promise<PersonalInfo> {
+    const info: PersonalInfo = {
+      id: Date.now(),
+      ...insertInfo,
+    };
+
+    // allow only ONE personal info record
+    db.delete("personalInfo", () => true);
+    db.insert("personalInfo", info);
+
     return info;
   }
 }
